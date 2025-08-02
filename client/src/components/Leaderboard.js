@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Trophy, Medal, Award } from 'lucide-react';
+import { API_ENDPOINTS } from '../config/api';
 
 const Leaderboard = () => {
   const [leaderboardData, setLeaderboardData] = useState([]);
@@ -12,7 +13,7 @@ const Leaderboard = () => {
 
   const fetchLeaderboardData = async () => {
     try {
-      const response = await axios.get('/api/leaderboard');
+      const response = await axios.get(API_ENDPOINTS.LEADERBOARD);
       if (response.data.success) {
         setLeaderboardData(response.data.data);
       }

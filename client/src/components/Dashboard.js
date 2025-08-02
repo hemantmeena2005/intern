@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import axios from 'axios';
 import { Gift, Copy, Check } from 'lucide-react';
+import { API_ENDPOINTS } from '../config/api';
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -15,7 +16,7 @@ const Dashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await axios.get(`/api/dashboard/${user.id}`);
+      const response = await axios.get(API_ENDPOINTS.DASHBOARD(user.id));
       if (response.data.success) {
         setDashboardData(response.data.data);
       }
