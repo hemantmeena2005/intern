@@ -7,7 +7,11 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+  origin: 'https://intern1-puce.vercel.app', // Allow requests from your Vercel frontend
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // MongoDB Connection (optional - we'll use dummy data for now)
@@ -172,4 +176,4 @@ app.get('/api/health', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`API available at http://localhost:${PORT}/api`);
-}); 
+});
