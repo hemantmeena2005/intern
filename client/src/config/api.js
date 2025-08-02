@@ -1,6 +1,6 @@
-// API Configuration using environment variable
+// API Configuration with hardcoded value
 const getApiUrl = () => {
-  return process.env.REACT_APP_API_URL || 'http://localhost:5001';
+  return 'https://intern-7w8r.onrender.com'; // Value is now directly here
 };
 
 export const API_BASE_URL = getApiUrl();
