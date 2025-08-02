@@ -1,0 +1,398 @@
+.App {
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 0.5rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--card-background);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.auth-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.dashboard-container {
+  padding: 2rem 1rem;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-card.secondary {
+  background: linear-gradient(135deg, var(--secondary-color), #059669);
+}
+
+.stat-card.accent {
+  background: linear-gradient(135deg, var(--accent-color), #d97706);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.rewards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.reward-card {
+  background-color: var(--card-background);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.reward-card.unlocked {
+  border-color: var(--secondary-color);
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+}
+
+.reward-card.locked {
+  opacity: 0.6;
+  background-color: #f9fafb;
+}
+
+.reward-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.reward-card.unlocked .reward-icon {
+  background-color: var(--secondary-color);
+}
+
+.reward-card.locked .reward-icon {
+  background-color: var(--text-secondary);
+}
+
+.reward-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.reward-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.leaderboard-container {
+  padding: 2rem 1rem;
+}
+
+.leaderboard-table {
+  width: 100%;
+  background-color: var(--card-background);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.leaderboard-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 1.5rem;
+}
+
+.leaderboard-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 50px 1fr 120px 120px;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.leaderboard-row:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-row:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.rank {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.rank-1 {
+  color: #fbbf24;
+}
+
+.rank-2 {
+  color: #9ca3af;
+}
+
+.rank-3 {
+  color: #cd7f32;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.donations, .referrals {
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .dashboard-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+  
+  .dashboard-subtitle {
+    font-size: 0.875rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  
+  .rewards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .reward-card {
+    padding: 1rem;
+  }
+  
+  .reward-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .leaderboard-row {
+    grid-template-columns: 40px 1fr 80px 80px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .leaderboard-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .auth-card {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .auth-title {
+    font-size: 1.5rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.125rem;
+  }
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .rewards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  
+  .leaderboard-row {
+    grid-template-columns: 50px 1fr 100px 100px;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .dashboard-container {
+    padding: 0.75rem 0.25rem;
+  }
+  
+  .dashboard-title {
+    font-size: 1.25rem;
+  }
+  
+  .stats-grid {
+    gap: 0.75rem;
+  }
+  
+  .stat-card {
+    padding: 0.75rem;
+  }
+  
+  .stat-value {
+    font-size: 1.25rem;
+  }
+  
+  .rewards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+  }
+  
+  .reward-card {
+    padding: 0.75rem;
+  }
+  
+  .reward-icon {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+  
+  .leaderboard-row {
+    grid-template-columns: 30px 1fr 70px 70px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .auth-card {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .auth-title {
+    font-size: 1.25rem;
+  }
+  
+  .card {
+    padding: 0.75rem;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+  
+  /* Responsive form improvements */
+  .form-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 16px;
+  }
+} 
